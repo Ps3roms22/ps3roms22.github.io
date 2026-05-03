@@ -1,0 +1,156 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@400;600&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .page {
+    min-height: 100vh; width: 100%;
+    padding: 40px 24px 48px;
+    font-family: 'Rajdhani', sans-serif;
+    position: relative; overflow: hidden;
+  }
+  .bg {
+    position: fixed;
+    top: -30px; left: -30px; right: -30px; bottom: -30px;
+    background-image: url('https://i.pinimg.com/1200x/59/59/02/595902b71200f8a67c4df353dcab98c9.jpg');
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    animation: parallax 18s ease-in-out infinite alternate;
+    z-index: 0; filter: contrast(1.1) saturate(1.2) brightness(0.95);
+  }
+  .bg-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45); z-index: 1;
+  }
+  @keyframes parallax {
+    0%   { transform: scale(1.1) translate(0px, 0px); }
+    33%  { transform: scale(1.1) translate(-12px, -6px); }
+    66%  { transform: scale(1.1) translate(8px, -10px); }
+    100% { transform: scale(1.1) translate(12px, 6px); }
+  }
+  .content { position: relative; z-index: 2; }
+  .site-title {
+    text-align: center; font-family: 'Orbitron', sans-serif;
+    font-size: 28px; font-weight: 700; color: #ffffff;
+    text-decoration: underline; text-decoration-thickness: 2px;
+    text-underline-offset: 6px; margin-bottom: 40px; letter-spacing: 2px;
+    animation: shimmer 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes shimmer {
+    0%   { text-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 20px rgba(0,80,200,0.2); }
+    100% { text-shadow: 0 0 14px rgba(255,255,255,0.9), 0 0 36px rgba(0,100,255,0.7); }
+  }
+  .grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px; max-width: 900px; margin: 0 auto 24px auto;
+  }
+  .card { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .img-wrapper { position: relative; width: 260px; height: 145px; }
+  .img-wrapper img {
+    width: 260px; height: 145px; object-fit: cover;
+    border-radius: 10px; border: 2px solid rgba(255,255,255,0.5);
+    display: block; filter: grayscale(100%) brightness(0.3);
+  }
+  .img-overlay {
+    position: absolute; inset: 0; display: flex;
+    align-items: center; justify-content: center;
+    border-radius: 10px; background: rgba(0,0,0,0.35);
+    animation: glowBox 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes glowBox {
+    0%   { box-shadow: 0 0 8px 2px rgba(0,0,0,0.4) inset; }
+    100% { box-shadow: 0 0 22px 6px rgba(0,0,0,0.85) inset; }
+  }
+  .img-overlay span {
+    font-family: 'Orbitron', sans-serif; font-size: 14px;
+    font-weight: 700; color: #ffffff; letter-spacing: 1px;
+    animation: glowText 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes glowText {
+    0%   { text-shadow: 0 0 6px rgba(255,255,255,0.5); }
+    100% { text-shadow: 0 0 18px rgba(255,255,255,1), 0 0 35px rgba(255,255,255,0.6); }
+  }
+  .card .game-name {
+    font-size: 16px; font-weight: 600; color: #ffffff;
+    text-align: center; text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  }
+  .pkgi-link {
+    font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700;
+    color: #ffffff !important; text-decoration: none !important;
+    animation: glowWhite 2.5s ease-in-out infinite alternate;
+  }
+  @keyframes glowWhite {
+    0%   { text-shadow: 0 0 4px rgba(255,255,255,0.3); }
+    100% { text-shadow: 0 0 12px rgba(255,255,255,0.9), 0 0 24px rgba(255,255,255,0.5); }
+  }
+  .pkgi-link:hover { opacity: 0.75; }
+</style>
+<div class="page">
+  <div class="bg"></div>
+  <div class="bg-overlay"></div>
+  <div class="content">
+    <h1 class="site-title">PS3 Games 2026</h1>
+
+    <!-- Row 1: Cards 1, 2, 3 -->
+    <div class="grid">
+
+      <div class="card">
+        <div class="img-wrapper">
+          <img src="https://www.logic-sunrise.com/images/news/1082453/ps3-pkgi-ps3-v100-disponible.png" alt="pkgi" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'" />
+          <div class="img-overlay"><span>PKGI v1.30</span></div>
+        </div>
+        <span class="game-name">PKGI v1.30</span>
+        <a class="pkgi-link" href="https://github.com/bucanero/pkgi-ps3/releases/download/v1.3.0/pkgi-ps3.pkg" target="_blank">PKGI Link</a>
+      </div>
+
+      <div class="card">
+        <div class="img-wrapper">
+          <img src="https://www.logic-sunrise.com/images/news/1071061/ps3-multiman-485-disponible-en-exclusivite.jpg" alt="Multiman" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'" />
+          <div class="img-overlay"><span>Multiman v4.85</span></div>
+        </div>
+        <span class="game-name">Multiman v4.85</span>
+        <a class="pkgi-link" href="https://store.brewology.com/get/homebrew.php?id=24&fid=2200" target="_blank">Multiman Link</a>
+      </div>
+
+      <div class="card">
+        <div class="img-wrapper">
+          <img src="https://www.logic-sunrise.com/images/news/1156442/ps3-webman-mod-14740-disponible.jpg" alt="webMAN" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'" />
+          <div class="img-overlay"><span>webMAN v1.47.48</span></div>
+        </div>
+        <span class="game-name">webMAN v1.47.48</span>
+        <a class="pkgi-link" href="https://store.brewology.com/get/homebrew.php?id=310&fid=2476" target="_blank">webMAN Link</a>
+      </div>
+
+    </div>
+
+    <!-- Row 2: Cards 4, 5, 6 -->
+    <div class="grid">
+
+      <div class="card">
+        <div class="img-wrapper">
+          <img src="https://www.logic-sunrise.com/images/news/1219257/ps3-evilnat-devoile-des-correctifs-et-une-mise-a-jour-de-cfw-493-evilnat.jpg" alt="CFW 4.93 Evilnat" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'" />
+          <div class="img-overlay"><span>CFW 4.93 Evilnat</span></div>
+        </div>
+        <span class="game-name">CFW 4.93 Evilnat</span>
+        <a class="pkgi-link" href="https://drive.usercontent.google.com/download?id=1Gs_KFsUTKVWCaXOGBTj3OVxT3qohiD-v&export=download&authuser=0" target="_blank">[ CEX ]</a>
+      </div>
+
+      <div class="card">
+        <div class="img-wrapper">
+          <img src="https://www.logic-sunrise.com/images/news/1219257/ps3-evilnat-devoile-des-correctifs-et-une-mise-a-jour-de-cfw-493-evilnat.jpg" alt="CFW 4.93 Evilnat" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'" />
+          <div class="img-overlay"><span>CFW 4.93 Evilnat</span></div>
+        </div>
+        <span class="game-name">CFW 4.93 Evilnat</span>
+        <a class="pkgi-link" href="https://drive.usercontent.google.com/download?id=1rK14HtIRvnNaatoOMusBsmt-RTGuda1n&export=download&authuser=0" target="_blank">[ PEX ]</a>
+      </div>
+
+      <div class="card">
+        <div class="img-wrapper">
+          <img src="https://www.logic-sunrise.com/images/news/1219257/ps3-evilnat-devoile-des-correctifs-et-une-mise-a-jour-de-cfw-493-evilnat.jpg" alt="CFW 4.93 Evilnat" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/480px-No_image_available.svg.png'" />
+          <div class="img-overlay"><span>CFW 4.93 Evilnat</span></div>
+        </div>
+        <span class="game-name">CFW 4.93 Evilnat</span>
+        <a class="pkgi-link" href="https://drive.usercontent.google.com/download?id=17ibP2FjbcgDRmn0QHI_ut4TvKEWNFt0-&export=download&authuser=0" target="_blank">[ D-PEX ]</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
